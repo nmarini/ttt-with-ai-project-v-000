@@ -10,7 +10,7 @@ module Players
         move = "1"
       elsif board.turn_count == 2
         move = [1, 3, 7, 9].find{|i| !board.taken?(i)}.to_s
-      
+
       else
         Game::WIN_COMBINATIONS.detect do |cmb|
           if cmb.select{|i| board.position(i+1) == token}.size == 2 && cmb.any?{|i| board.position(i+1) == " "}
